@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="app">
+		{{ message }}<br> ——{{ author }}
+		{{ a }}
+	</div>
+	<script type="text/javascript">
+		var data = {message: 'I like you, HHY', author: '吃不胖的陈同学', a:''};
+		
+		var app = new Vue({
+			el: '#app',
+			data:data,
+		});
+		var data = {a: '要开心啊！要努力'}
+		var vm = new Vue({
+			el: '#app',
+			data: data,
+		});
+
+		vm.$watch('a', function(newVal, oldVal){
+			console.log(newVal, oldVal)
+		});
+		vm.$data.a = '奥里给'
+	</script>
+
+</body>
+</html>
